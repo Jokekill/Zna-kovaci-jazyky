@@ -71,5 +71,13 @@
         <doctor ref="doc002"/>
       </appointment>
     </patient>
+    <patient id="pat004">
+      <name>Petr Malý2</name>
+      <appointment>
+        <date>2025-03-25</date>
+        <department ref="dep001"/>
+        <doctor ref="doc002"/>
+      </appointment>
+    </patient>
   </patients>
 </healthcareData>
