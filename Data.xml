@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<healthcareData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema.xsd">
+  <!-- Oddělení zdravotního centra -->
+  <department id="dep001">
+    <name>Internační medicína</name>
+    <doctor id="doc001">
+      <name>MUDr. Jan Novák</name>
+      <specialty>Internista</specialty>
+      <schedule>
+        <day name="Pondělí">
+          <shift start="08:00" end="16:00"/>
+        </day>
+        <day name="Středa">
+          <shift start="08:00" end="16:00"/>
+        </day>
+      </schedule>
+    </doctor>
+    <doctor id="doc002">
+      <name>MUDr. Petra Svobodová</name>
+      <specialty>Internista</specialty>
+      <schedule>
+        <day name="Úterý">
+          <shift start="09:00" end="17:00"/>
+        </day>
+        <day name="Čtvrtek">
+          <shift start="09:00" end="17:00"/>
+        </day>
+      </schedule>
+    </doctor>
+  </department>
+
+  <department id="dep002">
+    <name>Kardiologie</name>
+    <doctor id="doc003">
+      <name>MUDr. Karel Dvořák</name>
+      <specialty>Kardiolog</specialty>
+      <schedule>
+        <day name="Pondělí">
+          <shift start="10:00" end="18:00"/>
+        </day>
+        <day name="Pátek">
+          <shift start="10:00" end="18:00"/>
+        </day>
+      </schedule>
+    </doctor>
+  </department>
+
+  <!-- Data pacientů -->
+  <patients>
+    <patient id="pat001">
+      <name>Jan Horák</name>
+      <appointment>
+        <date>2025-03-20</date>
+        <department ref="dep001"/>
+        <doctor ref="doc001"/>
+      </appointment>
+    </patient>
+    <patient id="pat002">
+      <name>Eva Novotná</name>
+      <appointment>
+        <date>2025-04-10</date>
+        <department ref="dep002"/>
+        <doctor ref="doc003"/>
+      </appointment>
+    </patient>
+    <patient id="pat003">
+      <name>Petr Malý</name>
+      <appointment>
+        <date>2025-03-25</date>
+        <department ref="dep001"/>
+        <doctor ref="doc002"/>
+      </appointment>
+    </patient>
+  </patients>
+</healthcareData>

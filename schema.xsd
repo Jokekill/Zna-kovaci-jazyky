@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- ===========================
+       Jednoduché typy s restrikcemi
+       =========================== -->
+
+  <!-- Custom Restriction 1: Čas ve formátu HH:MM -->
+  <xs:simpleType name="timeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{2}:\d{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom Restriction 2: ID musí mít tři písmena následovaná třemi číslicemi -->
+  <xs:simpleType name="idType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z]{3}\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom Restriction 3: Specifikace povolených specialit -->
+  <xs:simpleType name="specialtyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Internista"/>
+      <xs:enumeration value="Kardiolog"/>
+      <xs:enumeration value="Chirurg"/>
+      <xs:enumeration value="Neurolog"/>
+      <xs:enumeration value="Dermatolog"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom Restriction 4: Datum musí být po 1. lednu 2000 -->
+  <xs:simpleType name="dateType">
+    <xs:restriction base="xs:date">
+      <xs:minInclusive value="2000-01-01"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Custom Restriction 5: Reference (např. na oddělení či doktora) dle vzoru -->
+  <xs:simpleType name="refType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z]{3}\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ===========================
+       Globální elementy (30 unikátních názvů)
+       ===========================
+       1. healthcareData (root)
+       2. clinicInfo
+       3. address
+       4. phone
+       5. email
+       6. location
+       7. openingHours
+       8. department
+       9. patients
+      10. newsArticle
+      11. comment
+      12. service
+      13. feedback
+      14. departmentName
+      15. description
+      16. doctor
+      17. doctorName
+      18. specialty
+      19. schedule
+      20. day
+      21. shift
+      22. patient
+      23. patientName
+      24. appointment
+      25. appointmentDate
+      26. refDepartment
+      27. refDoctor
+      28. headline
+      29. articleBody
+      30. datePublished
+       =========================== -->
+
+  <!-- Root element -->
+  <xs:element name="healthcareData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="clinicInfo" type="xs:string" minOccurs="0"/>
+        <xs:element name="address" type="xs:string" minOccurs="0"/>
+        <xs:element name="phone" type="xs:string" minOccurs="0"/>
+        <xs:element name="email" type="xs:string" minOccurs="0"/>
+        <xs:element name="location" type="xs:string" minOccurs="0"/>
+        <xs:element name="openingHours" type="xs:string" minOccurs="0"/>
+        <xs:element name="department" type="departmentType" maxOccurs="unbounded"/>
+        <xs:element name="patients" type="patientsType" minOccurs="0"/>
+        <xs:element name="newsArticle" type="newsArticleType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="comment" type="xs:string" minOccurs="0"/>
+        <xs:element name="service" type="serviceType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="feedback" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+      <!-- Unikátní atribut 1: dataVersion -->
+      <xs:attribute name="dataVersion" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Department Type -->
+  <xs:complexType name="departmentType">
+    <xs:sequence>
+      <xs:element name="departmentName" type="xs:string"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="doctor" type="doctorType" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <!-- Unikátní atribut 2: id -->
+    <xs:attribute name="id" type="idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Doctor Type -->
+  <xs:complexType name="doctorType">
+    <xs:sequence>
+      <xs:element name="doctorName" type="xs:string"/>
+      <xs:element name="specialty" type="specialtyType"/>
+      <xs:element name="schedule" type="scheduleType"/>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="phone" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <!-- Unikátní atribut 3: docID -->
+    <xs:attribute name="docID" type="idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Schedule Type -->
+  <xs:complexType name="scheduleType">
+    <xs:sequence>
+      <xs:element name="day" type="dayType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Day Type -->
+  <xs:complexType name="dayType">
+    <xs:sequence>
+      <xs:element name="shift" type="shiftType" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <!-- Unikátní atribut 4: name -->
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- Shift Type -->
+  <xs:complexType name="shiftType">
+    <!-- Unikátní atributy 5 a 6: start a end -->
+    <xs:attribute name="start" type="timeType" use="required"/>
+    <xs:attribute name="end" type="timeType" use="required"/>
+  </xs:complexType>
+
+  <!-- Patients Type -->
+  <xs:complexType name="patientsType">
+    <xs:sequence>
+      <xs:element name="patient" type="patientType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Patient Type -->
+  <xs:complexType name="patientType">
+    <xs:sequence>
+      <xs:element name="patientName" type="xs:string"/>
+      <xs:element name="appointment" type="appointmentType"/>
+    </xs:sequence>
+    <!-- Unikátní atribut 7: patID -->
+    <xs:attribute name="patID" type="idType" use="required"/>
+  </xs:complexType>
+
+  <!-- Appointment Type -->
+  <xs:complexType name="appointmentType">
+    <xs:sequence>
+      <xs:element name="appointmentDate" type="dateType"/>
+      <xs:element name="refDepartment" type="refType"/>
+      <xs:element name="refDoctor" type="refType"/>
+    </xs:sequence>
+    <!-- Unikátní atribut 8: apptID -->
+    <xs:attribute name="apptID" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!-- News Article Type -->
+  <xs:complexType name="newsArticleType">
+    <xs:sequence>
+      <xs:element name="headline" type="xs:string"/>
+      <xs:element name="articleBody" type="xs:string"/>
+      <xs:element name="datePublished" type="dateType"/>
+    </xs:sequence>
+    <!-- Unikátní atribut 9: newsID -->
+    <xs:attribute name="newsID" type="xs:string" use="optional"/>
+  </xs:complexType>
+
+  <!-- Service Type s jednoduchým obsahem a atributem -->
+  <xs:complexType name="serviceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <!-- Unikátní atribut 10: serviceID -->
+        <xs:attribute name="serviceID" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>
