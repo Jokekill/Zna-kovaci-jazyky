@@ -1,96 +1,92 @@
 <!DOCTYPE html>
 <html lang="cs">
-<link rel="stylesheet" href="style.css">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zdravotní centrum Vitalis</title>
-  <meta name="description" content="Fiktivní zdravotní centrum Vitalis nabízí komplexní zdravotní péči s moderním přístupem ke kvalitní medicíně.">
-  
-  <!-- Open Graph pro Facebook -->
-  <meta property="og:title" content="Zdravotní centrum Vitalis">
-  <meta property="og:description" content="Fiktivní zdravotní centrum Vitalis nabízí komplexní zdravotní péči s moderním přístupem ke kvalitní medicíně.">
+  <title>Medicentrum ProCare</title>
+  <meta name="description" content="Medicentrum ProCare – moderní zdravotnické zařízení nabízející komplexní péči s důrazem na prevenci a inovaci.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Medicentrum ProCare">
+  <meta property="og:description" content="Zdravotnické centrum ProCare poskytuje profesionální péči v moderním prostředí.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.vitalis.cz">
-  <meta property="og:image" content="https://www.vitalis.cz/assets/logo.png">
-  
+  <meta property="og:url" content="https://www.procare.cz">
+  <meta property="og:image" content="https://www.procare.cz/assets/logo.png">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body itemscope itemtype="http://schema.org/MedicalOrganization">
-  <header>
-    <h1 itemprop="name">Zdravotní centrum Vitalis</h1>
-    <!-- Logo zdravotního centra -->
-    <img src="assets/logo.png" alt="Logo Vitalis" itemprop="logo">
-    
+  <header class="main-header">
+    <h1 itemprop="name">Medicentrum ProCare</h1>
+    <img src="assets/logo.png" alt="Logo Medicentra ProCare" itemprop="logo">
     <nav>
       <ul>
-        <li><a href="#o-nas" itemprop="url">O nás</a></li>
-        <li><a href="#oteviraci-doba" itemprop="url">Otevírací doba</a></li>
-        <li><a href="#novinky" itemprop="url">Novinky</a></li>
-        <li><a href="#kontakt" itemprop="url">Kontakt</a></li>
+        <li><a href="#onas" class="nav-link" itemprop="url">Kdo jsme</a></li>
+        <li><a href="#dostupnost" class="nav-link" itemprop="url">Ordinační hodiny</a></li>
+        <li><a href="#aktuality" class="nav-link" itemprop="url">Aktuality</a></li>
+        <li><a href="#kontakt" class="nav-link" itemprop="url">Spojte se s námi</a></li>
       </ul>
     </nav>
   </header>
-  
-  <!-- Sekce O nás s mikrodaty pro Organization -->
-  <section id="o-nas" itemscope itemtype="http://schema.org/Organization">
-    <h2>O nás</h2>
+
+  <section id="onas" class="info-section" itemscope itemtype="http://schema.org/Organization">
+    <h2>O našem centru</h2>
     <article itemprop="description">
-      <p>Zdravotní centrum Vitalis je moderní zařízení zaměřené na prevenci a léčbu různých zdravotních obtíží. Naším cílem je poskytovat pacientům kvalitní péči a odborné poradenství.</p>
+      <p>Medicentrum ProCare je zdravotnické zařízení zaměřené na moderní přístup ke zdraví. Nabízíme individuální péči, důraz na prevenci a špičkové odborníky z různých lékařských oblastí.</p>
     </article>
   </section>
-  
-  <!-- Sekce Otevírací doba -->
-  <section id="oteviraci-doba">
-    <h2>Otevírací doba</h2>
+
+  <section id="dostupnost" class="info-section">
+    <h2>Ordinační hodiny</h2>
     <article>
-      <p>Naše centrum je otevřeno každý pracovní den:</p>
+      <p>Jsme tu pro vás v těchto časech:</p>
       <ul>
-        <li>Pondělí - Pátek: <time datetime="08:00">8:00</time> - <time datetime="18:00">18:00</time></li>
-        <li>Sobota: <time datetime="09:00">9:00</time> - <time datetime="14:00">14:00</time></li>
+        <li>Pondělí–Pátek: <time datetime="07:30">7:30</time> – <time datetime="17:00">17:00</time></li>
+        <li>Sobota: <time datetime="09:00">9:00</time> – <time datetime="13:00">13:00</time></li>
       </ul>
     </article>
   </section>
-  
-  <!-- Sekce Novinky s mikrodaty pro NewsArticle -->
-  <section id="novinky">
-    <h2>Novinky</h2>
-    <article itemscope itemtype="http://schema.org/NewsArticle">
-      <h3 itemprop="headline">Nová moderní diagnostická zařízení</h3>
-      <p itemprop="articleBody">V našem centru jsme nedávno nainstalovali nejnovější diagnostická zařízení, která zvyšují přesnost a rychlost vyšetření.</p>
-      <time datetime="2025-02-01" itemprop="datePublished">1. února 2025</time>
+
+  <section id="aktuality">
+    <h2>Aktuality z centra</h2>
+    
+    <article class="news-card" itemscope itemtype="http://schema.org/NewsArticle">
+      <h3 itemprop="headline">Nové vybavení pro vyšetření srdce</h3>
+      <p itemprop="articleBody">Do našeho zařízení jsme nově pořídili moderní kardiologické přístroje, které umožňují přesnější diagnostiku.</p>
+      <time datetime="2025-02-20" itemprop="datePublished">20. února 2025</time>
     </article>
-    <article itemscope itemtype="http://schema.org/NewsArticle">
-      <h3 itemprop="headline">Odborný seminář o prevenci nemocí</h3>
-      <p itemprop="articleBody">Přijďte se zúčastnit odborného semináře, kde naši specialisté představí novinky v prevenci a léčbě chronických onemocnění.</p>
-      <time datetime="2025-03-15" itemprop="datePublished">15. března 2025</time>
+
+    <article class="news-card" itemscope itemtype="http://schema.org/NewsArticle">
+      <h3 itemprop="headline">Zdravotní přednáška pro veřejnost</h3>
+      <p itemprop="articleBody">Zveme vás na interaktivní přednášku zaměřenou na životní styl a prevenci civilizačních chorob.</p>
+      <time datetime="2025-03-28" itemprop="datePublished">28. března 2025</time>
     </article>
-    <article itemscope itemtype="http://schema.org/NewsArticle">
-      <h3 itemprop="headline">Rozšíření týmu specialistů</h3>
-      <p itemprop="articleBody">S radostí oznamujeme, že jsme rozšířili náš tým o nové specialisty z různých oblastí medicíny.</p>
-      <time datetime="2025-01-20" itemprop="datePublished">20. ledna 2025</time>
+
+    <article class="news-card" itemscope itemtype="http://schema.org/NewsArticle">
+      <h3 itemprop="headline">Rozšířený tým fyzioterapeutů</h3>
+      <p itemprop="articleBody">Těší nás, že můžeme přivítat nové odborníky v oblasti rehabilitace a fyzioterapie.</p>
+      <time datetime="2025-01-10" itemprop="datePublished">10. ledna 2025</time>
     </article>
   </section>
-  
-  <!-- Sidebar se sociálními sítěmi -->
+
   <aside>
-    <h2>Sledujte nás</h2>
+    <h2>Sledujte nás online</h2>
     <ul>
-      <li><a href="https://www.facebook.com/vitalis" target="_blank">Facebook</a></li>
-      <li><a href="https://www.twitter.com/vitalis" target="_blank">Twitter</a></li>
-      <li><a href="https://www.instagram.com/vitalis" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/procarecentrum" target="_blank">Facebook</a></li>
+      <li><a href="https://www.twitter.com/procarecentrum" target="_blank">Twitter</a></li>
+      <li><a href="https://www.instagram.com/procarecentrum" target="_blank">Instagram</a></li>
     </ul>
   </aside>
-  
-  <!-- Fat Footer s kontaktními informacemi -->
+
   <footer id="kontakt">
-    <address>
-      <p>Kontakt: <a href="mailto:info@vitalis.cz">info@vitalis.cz</a></p>
-      <p>Adresa: Ulice Zdraví 123, 110 00 Praha</p>
-      <p>Telefon: +420 123 456 789</p>
-    </address>
-    <p>&copy; 2025 Zdravotní centrum Vitalis. Všechna práva vyhrazena.</p>
+    <div class="contact-box">
+      <address>
+        <p>Email: <a href="mailto:kontakt@procare.cz">kontakt@procare.cz</a></p>
+        <p>Adresa: Zdravotní 456, 120 00 Praha</p>
+        <p>Telefon: +420 987 654 321</p>
+      </address>
+    </div>
+    <p>&copy; 2025 Medicentrum ProCare. Všechna práva vyhrazena.</p>
   </footer>
 </body>
 </html>
