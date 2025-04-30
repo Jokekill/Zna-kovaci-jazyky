@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medicentrum ProCare</title>
   <meta name="description" content="Medicentrum ProCare – moderní zdravotnické zařízení nabízející komplexní péči s důrazem na prevenci a inovaci.">
+  <meta name="author" content="Tvé jméno">
+  <meta name="robots" content="index, follow">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Medicentrum ProCare">
   <meta property="og:description" content="Zdravotnické centrum ProCare poskytuje profesionální péči v moderním prostředí.">
   <meta property="og:type" content="website">
@@ -41,15 +42,15 @@
     <article>
       <p>Jsme tu pro vás v těchto časech:</p>
       <ul>
-        <li>Pondělí–Pátek: <time datetime="07:30">7:30</time> – <time datetime="17:00">17:00</time></li>
-        <li>Sobota: <time datetime="09:00">9:00</time> – <time datetime="13:00">13:00</time></li>
+        <li>Pondělí–Pátek: <time datetime="07:30" itemprop="openingHours">7:30 – 17:00</time></li>
+        <li>Sobota: <time datetime="09:00" itemprop="openingHours">9:00 – 13:00</time></li>
       </ul>
     </article>
   </section>
 
   <section id="aktuality">
     <h2>Aktuality z centra</h2>
-    
+
     <article class="news-card" itemscope itemtype="http://schema.org/NewsArticle">
       <h3 itemprop="headline">Nové vybavení pro vyšetření srdce</h3>
       <p itemprop="articleBody">Do našeho zařízení jsme nově pořídili moderní kardiologické přístroje, které umožňují přesnější diagnostiku.</p>
@@ -72,20 +73,34 @@
   <aside>
     <h2>Sledujte nás online</h2>
     <ul>
-      <li><a href="https://www.facebook.com/procarecentrum" target="_blank">Facebook</a></li>
-      <li><a href="https://www.twitter.com/procarecentrum" target="_blank">Twitter</a></li>
-      <li><a href="https://www.instagram.com/procarecentrum" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/procarecentrum" target="_blank" itemprop="sameAs">Facebook</a></li>
+      <li><a href="https://www.twitter.com/procarecentrum" target="_blank" itemprop="sameAs">Twitter</a></li>
+      <li><a href="https://www.instagram.com/procarecentrum" target="_blank" itemprop="sameAs">Instagram</a></li>
     </ul>
   </aside>
 
   <footer id="kontakt">
-    <div class="contact-box">
+    <div class="contact-box" itemscope itemtype="http://schema.org/PostalAddress">
       <address>
-        <p>Email: <a href="mailto:kontakt@procare.cz">kontakt@procare.cz</a></p>
-        <p>Adresa: Zdravotní 456, 120 00 Praha</p>
-        <p>Telefon: +420 987 654 321</p>
+        <p>Email: <a href="mailto:kontakt@procare.cz" itemprop="email">kontakt@procare.cz</a></p>
+        <p>Adresa: <span itemprop="streetAddress">Zdravotní 456</span>, <span itemprop="postalCode">120 00</span> <span itemprop="addressLocality">Praha</span></p>
+        <p>Telefon: <span itemprop="telephone">+420 987 654 321</span></p>
       </address>
     </div>
+
+    <div class="footer-info">
+      <section>
+        <h3>Rychlé odkazy</h3>
+        <p><a href="#">GDPR</a></p>
+        <p><a href="#">Podmínky služeb</a></p>
+        <p><a href="#">Volná místa</a></p>
+      </section>
+      <section>
+        <h3>O ProCare</h3>
+        <p>Jsme tu pro vás už více než 10 let. Nabízíme služby v oblastech interna, kardiologie, fyzioterapie a více.</p>
+      </section>
+    </div>
+
     <p>&copy; 2025 Medicentrum ProCare. Všechna práva vyhrazena.</p>
   </footer>
 </body>
