@@ -1,94 +1,121 @@
+
 {
-    "departments": [
+  "departments": [
+    
       {
         "id": "dep001",
         "name": "Internační medicína",
         "doctors": [
-          {
-            "id": "doc001",
-            "name": "MUDr. Jan Novák",
-            "specialty": "Internista",
-            "schedule": [
-              {
-                "day": "Pondělí",
-                "shifts": [
+          
+            {
+              "id": "doc001",
+              "name": "MUDr. Jan Novák",
+              "specialty": "Internista",
+              "schedule": [
+                
                   {
-                    "start": "08:00",
-                    "end": "16:00"
-                  }
-                ]
-              },
-              {
-                "day": "Středa",
-                "shifts": [
+                    "day": "Pondělí",
+                    "shifts": [
+                      
+                        {
+                          "start": "08:00",
+                          "end": "16:00"
+                        }
+                    ]
+                  },
                   {
-                    "start": "08:00",
-                    "end": "16:00"
+                    "day": "Středa",
+                    "shifts": [
+                      
+                        {
+                          "start": "08:00",
+                          "end": "16:00"
+                        }
+                    ]
                   }
-                ]
-              }
-            ]
-          },
-          {
-            "id": "doc002",
-            "name": "MUDr. Petra Svobodová",
-            "specialty": "Internista",
-            "schedule": [
-              {
-                "day": "Úterý",
-                "shifts": [
+              ]
+            },
+            {
+              "id": "doc002",
+              "name": "MUDr. Petra Svobodová",
+              "specialty": "Internista",
+              "schedule": [
+                
                   {
-                    "start": "09:00",
-                    "end": "17:00"
-                  }
-                ]
-              },
-              {
-                "day": "Čtvrtek",
-                "shifts": [
+                    "day": "Úterý",
+                    "shifts": [
+                      
+                        {
+                          "start": "09:00",
+                          "end": "17:00"
+                        }
+                    ]
+                  },
                   {
-                    "start": "09:00",
-                    "end": "17:00"
+                    "day": "Čtvrtek",
+                    "shifts": [
+                      
+                        {
+                          "start": "09:00",
+                          "end": "17:00"
+                        }
+                    ]
                   }
-                ]
-              }
-            ]
-          }
+              ]
+            }
         ]
       },
       {
         "id": "dep002",
         "name": "Kardiologie",
         "doctors": [
-          {
-            "id": "doc003",
-            "name": "MUDr. Karel Dvořák",
-            "specialty": "Kardiolog",
-            "schedule": [
-              {
-                "day": "Pondělí",
-                "shifts": [
+          
+            {
+              "id": "doc003",
+              "name": "MUDr. Karel Dvořák",
+              "specialty": "Kardiolog",
+              "schedule": [
+                
                   {
-                    "start": "10:00",
-                    "end": "18:00"
-                  }
-                ]
-              },
-              {
-                "day": "Pátek",
-                "shifts": [
+                    "day": "Pondělí",
+                    "shifts": [
+                      
+                        {
+                          "start": "10:00",
+                          "end": "18:00"
+                        }
+                    ]
+                  },
                   {
-                    "start": "10:00",
-                    "end": "18:00"
+                    "day": "Pátek",
+                    "shifts": [
+                      
+                        {
+                          "start": "10:00",
+                          "end": "18:00"
+                        }
+                    ]
                   }
-                ]
-              }
-            ]
-          }
+              ]
+            }
         ]
       }
-    ],
-    "patients": [
+  ],
+
+  "patients": [
+    
+      {
+        "id": "pat002",
+        "name": "Eva Novotná",
+        "appointment": {
+          "date": "2025-04-10",
+          "department": "dep002",
+          "doctor": "doc003"
+        }
+        
+            ,"note": "Pacientka s preferencí dopoledních termínů"
+          
+      },
       {
         "id": "pat001",
         "name": "Jan Horák",
@@ -97,16 +124,7 @@
           "department": "dep001",
           "doctor": "doc001"
         }
-      },
-      {
-        "id": "pat002",
-        "name": "Eva Novotná",
-        "appointment": {
-          "date": "2025-04-10",
-          "department": "dep002",
-          "doctor": "doc003"
-        },
-        "note": "Pacientka s preferencí dopoledních termínů"
+        
       },
       {
         "id": "pat003",
@@ -116,6 +134,7 @@
           "department": "dep001",
           "doctor": "doc002"
         }
+        
       },
       {
         "id": "pat004",
@@ -125,6 +144,8 @@
           "department": "dep001",
           "doctor": "doc002"
         }
+        
       }
-    ]
-  }
+  ]
+}
+  
